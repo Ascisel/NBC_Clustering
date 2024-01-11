@@ -30,7 +30,6 @@ class NBC:
         
         return max(distances)
 
-
     def _find_neighbors_circle(self, point, point_id, neighborhood_radius):
         
         # Perform a range query to find neighbors within the circular radius
@@ -47,7 +46,6 @@ class NBC:
 
         return self._find_neighbors_circle(point, point_id, max_radius)
 
-    
     def get_neigbourhoods(self):
 
         neighbours = [[] for _ in range(len(self.dataset))]
@@ -73,39 +71,6 @@ class NBC:
 
         return ndf
 
-    # def get_clusters(self, ndf, neighbours):
-
-        # clusters = [None for _ in range(len(self.dataset))]
-        
-        # cld=0
-        # seeds = []
-
-        # for i in range(len(self.dataset)):
-        #     if clusters[i] != None:
-        #         continue
-
-        #     if ndf[i] < 1:
-        #         clusters[i] = 'N'
-        #     else:
-        #         clusters[i] = cld
-        #         seeds.append(i)
-             
-        #         while seeds:
-        #             point = seeds.pop(0)
-        #             for neighbour in neighbours[point]:
-
-        #                 if clusters[neighbour] == 'N':
-        #                     clusters[neighbour] = cld
-        #                 elif clusters[neighbour] is None:
-        #                     clusters[neighbour] = cld
-        #                     if ndf[neighbour] >= 1:
-        #                         seeds.append(neighbour)
-        #         cld += 1
-
-
-
-        # return clusters
-    
     def get_clusters(self, ndf, neighbours):
 
         clusters = ['N' for _ in range(len(self.dataset))]
