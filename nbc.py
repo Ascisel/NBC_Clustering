@@ -82,7 +82,7 @@ class NBC:
 
             clusters[i] = cld
             dpset = []
-             
+
             for neighbour in neighbours[i]:
                 clusters[neighbour] = cld
                 if ndf[neighbour] >= 1:
@@ -112,26 +112,3 @@ class NBC:
         clusters = self.get_clusters(ndf, neighbours)
 
         return clusters
-
-
-    
-
-if __name__ == '__main__':
-    dataset = np.array([
-        np.array([4.2, 4.0]),
-        np.array([5.9, 3.9]),
-        np.array([2.8, 3.5]),
-        np.array([12.0, 1.3]),
-        np.array([10.0, 1.3]),
-        np.array([1.1, 3.0]),
-        np.array([0.0, 2.4]),
-        np.array([2.4, 2.0]),
-        np.array([11.5, 1.8]),
-        np.array([11.0, 1.0]),
-        np.array([0.9, 0.0]),
-        np.array([1.0, 1.5]),
-    ]) # Your dataset
-    k = 3
-    nbc = NBC(k, dataset)
-
-    print(nbc.run())
